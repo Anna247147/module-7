@@ -1,4 +1,4 @@
-# Задаем переменные
+# Вводим данные о командах
 team1_num = 6
 team2_num = 6
 score1 = 40
@@ -7,35 +7,27 @@ team1_time = 1552.512
 team2_time = 2153.31451
 tasks_total = 82
 time_avg = 45.2
-challenge_result = 'Победа команды Волшебники данных!'
 
-# Использование %
-# Пример: "В команде Мастера кода участников: 5!"
-formatted_str1 = "В команде Мастера кода участников: %d!" % team1_num
-print(formatted_str1)
+# Форматирование строк с использованием %
+print("В команде Мастера кода участников: %d !" % team1_num)
+print("Итого сегодня в командах участников: %d и %d !" % (team1_num, team2_num))
 
-# Пример: "Итого сегодня в командах участников: 5 и 6!"
-formatted_str2 = "Итого сегодня в командах участников: %d и %d!" % (team1_num, team2_num)
-print(formatted_str2)
+# Форматирование строк с использованием format()
+print("Команда Волшебники данных решила задач: {} !".format(score2))
+print("Волшебники данных решили задачи за {:.1f} с !".format(team2_time))
 
-# Использование format()
-# Пример: "Команда Волшебники данных решила задач: 42!"
-formatted_str3 = "Команда Волшебники данных решила задач: {}!".format(score2)
-print(formatted_str3)
+# Форматирование строк с использованием f-строк
+print(f"Команды решили {score1} и {score2} задач.")
+# Определение исхода соревнования
+if score1 > score2 or (score1 == score2 and team1_time < team2_time):
+    challenge_result = 'Победа команды Мастера кода!'
+elif score1 < score2 or (score1 == score2 and team1_time > team2_time):
+    challenge_result = 'Победа команды Волшебники Данных!'
+else:
+    challenge_result = 'Ничья!'
 
-# Пример: "Волшебники данных решили задачи за 18015.2 с!"
-formatted_str4 = "Волшебники данных решили задачи за {:.1f} с!".format(team2_time)
-print(formatted_str4)
+print(f"Результат битвы: {challenge_result}")
 
-# Использование f-строк
-# Пример: "Команды решили 40 и 42 задач."
-formatted_str5 = f"Команды решили {score1} и {score2} задач."
-print(formatted_str5)
+# Дополнительная информация о задачах
+print(f"Сегодня было решено {tasks_total} задач, в среднем по {time_avg} секунды на задачу!")
 
-# Пример: "Результат битвы: победа команды Мастера кода!"
-formatted_str6 = f"Результат битвы: {challenge_result}"
-print(formatted_str6)
-
-# Пример: "Сегодня было решено 82 задач, в среднем по 350.4 секунды на задачу!"
-formatted_str7 = f"Сегодня было решено {tasks_total} задач, в среднем по {time_avg:.1f} секунды на задачу!"
-print(formatted_str7)
